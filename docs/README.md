@@ -1,19 +1,19 @@
-# Documentation
+# Документация
 
-## Table of Contents
+## Содержание
 
-- [General](general)
-  - [**CLI Commands**](general/commands.md)
-  - [Tool Configuration](general/files.md)
-  - [Server Configurations](general/server-configs.md)
-  - [Deployment](general/deployment.md) *(currently Heroku specific)*
+- [Введение](general)
+  - [**CLI Команды**](general/commands.md)
+  - [Конфигурация инструментов](general/files.md)
+  - [Конфигурация сервера](general/server-configs.md)
+  - [Развертывание](general/deployment.md) *(в настощяее время только Heroku)*
   - [FAQ](general/faq.md)
-  - [Gotchas](general/gotchas.md)
+  - [Подводные камни](general/gotchas.md)
   - [Remove](general/remove.md)
-- [Testing](testing)
-  - [Unit Testing](testing/unit-testing.md)
-  - [Component Testing](testing/component-testing.md)
-  - [Remote Testing](testing/remote-testing.md)
+- [Тестирование](testing)
+  - [Модульное тестирование](testing/unit-testing.md)
+  - [Тестирование компонентов](testing/component-testing.md)
+  - [Удаленное тестирование](testing/remote-testing.md)
 - [CSS](css)
   - [PostCSS](css/postcss.md)
   - [CSS Modules](css/css-modules.md)
@@ -26,71 +26,69 @@
   - [i18n](js/i18n.md)
   - [routing](js/routing.md)
 
-## Overview
+## Обзор
 
-### Quickstart
+### Быстрый старт
 
-1. First, let's kick the tyres by launching the sample _Repospective_ app
-   bundled with this project to demo some of its best features:
+1. Для начала сделаем вид, что мы  хотим запустить простое _Repospective_ приложение
+   в комплекте с этим проектом для демонстрации некоторых из своих лучших возможностей:   
 
     ```Shell
     npm run setup && npm start
     ```
 
-1. Open [localhost:3000](http://localhost:3000) to see it in action.
+1. Откройте [localhost:3000](http://localhost:3000) чтобы увидеть это в действии.
 
     - Add a Github username to see Redux and Redux Sagas in action: effortless
       async state updates and side effects are now yours :)
-    - Edit the file at `./app/containers/HomePage/index.js` so that the text of
-      the `<Button>` component reads "Features!!!"... Hot Module Reloading gives
-      you a feedback loop with your UI so smooth it's almost conversational!
+    - Отредактируйте файл `./app/containers/HomePage/index.js` так, чтобы текст 
+      компонента `<Button>` был "Features!!!"... Hot Module Reloading на ваши изменения!
+      сделает гладкую перезгарузку (без перезагрузки всей страницы).
     - Click your (newly emphatic) Features button to see React Router in action...
       Now you can share a direct link to that content privately over your LAN or
       globally addressable to any device, anywhere. Not bad for a locally-running
       Single Page App.
 
-1. Time to build your own app: run
+1. Настало время чтобы собрать свое собственное приложение: run
 
     ```shell
     npm run clean
     ```
 
-    ...and use the built-in generators to start your first feature.
+    ...и используйте встроенные генераторы чтобы начать работать над вашим приложением.
 
-### Development
+### Разработка
 
-Run `npm start` to see your app at `localhost:3000`
+Запустите `npm start` чтобы увидеть свое приложение по адресу `localhost:3000`
 
-### Building & Deploying
+### Сборка и Деплой
 
-1. Run `npm run build`, which will compile all the necessary files to the
-`build` folder.
+1. Запустите `npm run build`, эта команда скомпилирует все необходимые файлы и
+ поместит их в папку `build`.
 
-2. Upload the contents of the `build` folder to your web server's root folder.
+2. Загурузите содержимое папки `build` в корневую директорию вашего веб-сервера.
 
-### Structure
+### Структура
 
-The [`app/`](../../../tree/master/app) directory contains your entire application code, including CSS,
-JavaScript, HTML and tests.
+[`app/`](../../../tree/master/app) директория содерит весь код приложения, включая CSS,
+JavaScript, HTML и тесты.
 
-The rest of the folders and files only exist to make your life easier, and
-should not need to be touched.
+Остальные папки и файлы существуют только чтобы упростить разработку и не должны изменяться без надобности.
 
-*(If they do have to be changed, please [submit an issue](https://github.com/mxstbr/react-boilerplate/issues)!)*
+*(Если вы нашли ошибку в них, пожалуйста, сообщите [submit an issue](https://github.com/mxstbr/react-boilerplate/issues)!)*
 
 ### CSS
 
-Each component `import`s its styling dependencies from a co-located `styles.css`
-module.
+Каждый компонет импортирует (`import`) свои зависимости стилей из рядом расположенного `styles.css` файла стилей данного модуля.
 
-A production build transpiles these modules into page-specific CSS files (based
-on which components are actually used), while any shared styles are automatically
-extracted into a "common" stylesheet.
+Сборка на продакшине собирает (траспилирует) эти модули в специфичные для каждой страницы CSS файлы (
+ (на основе которых компоненты испольлзуются), в то время как все общие стили 
+автоматически собираются в "common" файл стилей.
 
-This means the leanest, fastest payload for your users.
+В результате минималистичности, получается высокая производительность для ваших пользователей. 
 
-See the [CSS documentation](./css/README.md) for more information about PostCSS
-and CSS modules.
+Смотрите [CSS documentation](./css/README.md) для большей информации PostCSS
+и CSS модулей.
 
 ### JS
 
